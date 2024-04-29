@@ -32,3 +32,7 @@ def get_pairs(number_list):
                 continue
         queues[this_type].enqueue(number)
     return pairs
+
+
+print(get_pairs([93, 55, 9, 36, 83, 98, 77, 97, 26, 81, 72, 48, 18, 20, 2, 88, 82, 51, 58, 30]))
+print(get_pairs([93, 55, 9, 36, 83, 98, 77, 97, 26, 81, 72, 48, 18, 20, 2, 88, 82, 51, 58, 30]))

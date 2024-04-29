@@ -56,3 +56,12 @@ class Queue:
             self._front.prev = None
         self._size -= 1
         return data
+
+
+
+queue = Queue()
+queue.enqueue('A')
+queue.enqueue('B')
+queue.enqueue('C')
+val = queue.dequeue()
+print(val, queue)

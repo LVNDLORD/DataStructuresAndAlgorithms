@@ -40,3 +40,6 @@ def check_balance(text):
         return f"Ok - {pairs}"
     else:
         return f"Match error at position {i}"
+
+
+check_balance("a(b)(((c[d]e{f}g)))")

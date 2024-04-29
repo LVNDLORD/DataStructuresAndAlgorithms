@@ -84,3 +84,11 @@ class Stack:
         data = node_to_remove.data
         del(node_to_remove)
         return data
+
+
+mystack = Stack()
+mystack.push('A')
+mystack.push('B')
+mystack.push('C')
+val = mystack.pop()
+print(val, mystack)

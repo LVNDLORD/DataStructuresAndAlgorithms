@@ -43,3 +43,10 @@ class StackBasedQueue():
         self._size -= 1
         return self._OutboundStack.pop()
 
+
+queue = StackBasedQueue()
+queue.enqueue('A')
+queue.enqueue('B')
+queue.enqueue('C')
+val = queue.dequeue()
+print(val, queue)
