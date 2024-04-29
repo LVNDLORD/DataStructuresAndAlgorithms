@@ -64,4 +64,4 @@ queue.enqueue('A')
 queue.enqueue('B')
 queue.enqueue('C')
 val = queue.dequeue()
-print(val, queue)
+print(val, queue) # A <Queue (2 elements): [C, B]>

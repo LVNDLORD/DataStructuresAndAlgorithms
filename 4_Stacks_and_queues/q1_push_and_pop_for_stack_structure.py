@@ -82,7 +82,7 @@ class Stack:
         self._top = self._top.next
         self._size -= 1
         data = node_to_remove.data
-        del(node_to_remove)
+        del (node_to_remove)
         return data
 
 
@@ -91,4 +91,4 @@ mystack.push('A')
 mystack.push('B')
 mystack.push('C')
 val = mystack.pop()
-print(val, mystack)
+print(val, mystack) # C <Stack (2 elements): [B, A]>

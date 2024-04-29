@@ -16,7 +16,51 @@ If there is, save the pair for the output. If not, enqueue it.
 
 """
 
-from q4_Node_based_queue import Queue
+
+class ListNode:
+    def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
+
+
+class Queue:
+    def __init__(self):
+        self._front = self._rear = None
+        self._size = 0
+
+    def __repr__(self):
+        current_node = self._rear
+        values = ''
+        while current_node:
+            values += f', {current_node.data}'
+            current_node = current_node.prev
+        plural = '' if self._size == 1 else 's'
+        return f'<Queue ({self._size} element{plural}): [{values.lstrip(", ")}]>'
+
+    def __len__(self):
+        return self._size
+
+    def enqueue(self, data):
+        new_node = ListNode(data)
+        if self._rear is None:
+            self._front = self._rear = new_node
+        else:
+            new_node.prev = self._rear
+            self._rear.next = new_node
+            self._rear = new_node
+        self._size += 1
+
+    def dequeue(self):
+        if self._front is None:
+            return None
+        data = self._front.data
+        if self._front.next is None:
+            self._front = self._rear = None
+        else:
+            self._front = self._front.next
+            self._front.prev = None
+        self._size -= 1
+        return data
 
 
 def get_pairs(number_list):
@@ -35,4 +79,6 @@ def get_pairs(number_list):
 
 
 print(get_pairs([93, 55, 9, 36, 83, 98, 77, 97, 26, 81, 72, 48, 18, 20, 2, 88, 82, 51, 58, 30]))
+# [(36, 93), (98, 55), (26, 9), (72, 83), (48, 77), (18, 97), (20, 81), (2, 51)]
 print(get_pairs([93, 55, 9, 36, 83, 98, 77, 97, 26, 81, 72, 48, 18, 20, 2, 88, 82, 51, 58, 30]))
+# [(36, 93), (98, 55), (26, 9), (72, 83), (48, 77), (18, 97), (20, 81), (2, 51)]
